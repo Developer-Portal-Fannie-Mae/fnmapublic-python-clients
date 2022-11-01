@@ -1,0 +1,22 @@
+{
+  "loanLimit": [
+    {
+      "stateCode": "MT",
+      "countyName": "Missoula County",
+      "reportingYear": 20200101,
+      "cbsaNumber": "33540",
+      "fipsCode": "30063",
+      "issuers": {
+        "issuer": [
+          {
+            "issuerType": "FHFA",
+            "oneUnitLimit": 510400,
+            "twoUnitLimit": 653550,
+            "threeUnitLimit": 789950,
+            "fourUnitLimit": 981700
+          }
+        ]
+      }
+    }
+  ]
+}
