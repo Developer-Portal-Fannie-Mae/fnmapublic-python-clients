@@ -1,21 +1,21 @@
 
-# theexchange-python3-clients
-theexchange python3 clients, including code samples to authenticate, authorize, submit requests, and process responses both small and large.
+# FNMApublic-python3-clients
+Python3 clients, including code samples to authenticate, authorize, submit requests, and process responses both small and large.
 
 
 ### Installation Instructions:
 
 	Step1: Create a directory into which you can clone this repo; that directory's name will become the value for
-	the EXCHANGE_CLIENT_HOME environment variable.  This document will use $HOME/eXchange as the example name of 
+	the CLIENT_HOME environment variable.  This document will use $HOME/dpPublic as the example name of 
 	this directory.
 	
-	Step2:  Set the EXCHANGE_CLIENT_HOME environment variable to $HOME/eXchange and cd into that directory:
-		bash--> export EXCHANGE_CLIENT_HOME=$HOME/eXchange
-		bash--> cd $EXCHANGE_CLIENT_HOME
+	Step2:  Set the CLIENT_HOME environment variable to $HOME/dpPublic and cd into that directory:
+		bash--> export CLIENT_HOME=$HOME/dpPublic
+		bash--> cd $CLIENT_HOME
 
 	Step3: Use git clone to obtain the client code and config files
 
-	Step4: Edit $HOME/eXchange/eXchange-client.properties so it contains your Exchange user ID and password
+	Step4: Edit $HOME/dpPublic/client.properties so it contains your Client ID and Secret
 
 	Step5:  Run a smoke test; if successful it will display an AUTH token:
 		bash--> python exchange_client.py
