@@ -14,8 +14,8 @@ import tempfile
    @Return string -- name of output file
 '''
 def run(api_uri, output_name=None):
-    base_uri = "https://api-devl-int.intgfanniemae.com"
-    #use the exchange_client to get our access token
+    base_uri = "https://api.fanniemae.com"
+    #use client.py to get our access token
     full_auth = client.get_auth_token()
     user_token = full_auth['access_token']
     uri = base_uri + api_uri
@@ -31,7 +31,7 @@ def run(api_uri, output_name=None):
 
 '''Request content from uri, return as a response object.'''
 def do_get(uri, user_token):
-    r = requests.get(uri,headers={"x-public-access-token": user_token, "Accept": "application/json"}, verify='C:/Users/r2ua5m/fnmaroot.pem')
+    r = requests.get(uri,headers={"x-public-access-token": user_token, "Accept": "application/json"}, verify='FNMAPublicCert.pem')
     if r.status_code != 200:
         raise Exception(uri + " resulted in an HTTP " + str(page_num))
     return r

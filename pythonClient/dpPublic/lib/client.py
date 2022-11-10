@@ -10,10 +10,6 @@ import requests
 import ssl
 from requests.auth import HTTPBasicAuth
 
-proxies = {
-   'http': 'http://127.0.0.1:9000',
-   'https': 'http://127.0.0.1:9000',
-}
 
 '''primary public entrypoint to this module --
    given a valid client.properties file located in
@@ -36,7 +32,7 @@ def load_properties():
         user_home = os.environ.get('USERPROFILE')
         if user_home == None:
             raise Exception("neither CLIENT_HOME nor USERPROFILE defined, cannot read client properties and therefore cannot proceed")
-        home_directory_name = user_home + "/Documents/theexchange-python3-clients-master/pythonClient/dpPublic"
+        home_directory_name = user_home + "/Documents/fnmapublic-python-clients-master/pythonClient/dpPublic"
     properties_file_name = "client.properties"
     properties_file_path = home_directory_name + "/" + properties_file_name
     print(home_directory_name)
@@ -55,13 +51,12 @@ def to_byte_array(string_value):
    to the designated client, authenicate the user and return an
    authorization token.  '''
 def ping_auth(secret_str, client_id_str):
-    accessTokenUrl = 'https://auth.pingone.com/9c273a66-1cf6-42ac-8807-e92a91536074/as/token'
+    accessTokenUrl = 'https://auth.pingone.com/4c2b23f9-52b1-4f8f-aa1f-1d477590770c/as/token'
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     basic = HTTPBasicAuth(client_id_str, secret_str)
     payload = {'grant_type': 'client_credentials'}
-    pingresponse = requests.post(accessTokenUrl, proxies=proxies, verify='C:/Users/r2ua5m/zsbundle.pem', auth=basic,
+    pingresponse = requests.post(accessTokenUrl, verify='zsPublicCert.pem', auth=basic,
                                     data=payload).json()
-    print(pingresponse)
     return pingresponse
 
 '''Generate an HMAC256 key to pass to cognito'''

@@ -10,7 +10,7 @@ def log(msg):
 		sys.stderr.write(msg + "\n")
 
 def run_nhs(api_uri, output_name=None):
-	base_uri = "https://api-devl-int.intgfanniemae.com"
+	base_uri = "https://api.fanniemae.com"
 	#use the exchange_client to get our access token
 	full_auth = client.get_auth_token()
 	user_token = full_auth['access_token']
