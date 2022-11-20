@@ -32,7 +32,7 @@ def load_properties():
         user_home = os.environ.get('USERPROFILE')
         if user_home == None:
             raise Exception("neither CLIENT_HOME nor USERPROFILE defined, cannot read client properties and therefore cannot proceed")
-        home_directory_name = user_home + "/Documents/fnmapublic-python-clients-master/pythonClient/dpPublic"
+        home_directory_name = user_home + "/fnmapublic-python-clients-master/pythonClient/dpPublic"
     properties_file_name = "client.properties"
     properties_file_path = home_directory_name + "/" + properties_file_name
     print(home_directory_name)
