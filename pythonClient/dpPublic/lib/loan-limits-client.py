@@ -24,7 +24,7 @@ base_uri = "https://api.fanniemae.com"
 loan_limits_api = "/v1/loan-limits/state/"
 loan_limits_request = loan_limits_api + state_abbrev + "/county/" + county_name
 
-r = requests.get(base_uri + loan_limits_request, headers={"x-public-access-token": user_token, "Accept": "application/json"}, verify='FNMAPublicCert.pem')
+r = requests.get(base_uri + loan_limits_request, headers={"x-public-access-token": user_token, "Accept": "application/json"})
 if r.status_code != 200:
     raise Exception(str(r.status_code) + " HTTP status returned")
 else:
