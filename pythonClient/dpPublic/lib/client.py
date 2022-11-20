@@ -54,7 +54,7 @@ def ping_auth(secret_str, client_id_str):
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     basic = HTTPBasicAuth(client_id_str, secret_str)
     payload = {'grant_type': 'client_credentials'}
-    pingresponse = requests.post(accessTokenUrl, verify='zsPublicCert.pem', auth=basic,
+    pingresponse = requests.post(accessTokenUrl, auth=basic,
                                     data=payload).json()
     return pingresponse
 
