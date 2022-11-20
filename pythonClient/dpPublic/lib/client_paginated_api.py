@@ -88,7 +88,7 @@ def run(api_uri, data_set_type, output_name=None):
 
 '''Request page_num's content from uri, return as a response object.'''
 def get_page(uri, page_num, user_token):
-    r = requests.get(uri + "?page=" + str(page_num),headers={"x-public-access-token": user_token, "Accept": "application/json"}, verify='FNMAPublicCert.pem')
+    r = requests.get(uri + "?page=" + str(page_num),headers={"x-public-access-token": user_token, "Accept": "application/json"})
     if r.status_code != 200:
         raise Exception(uri + " resulted in an HTTP " + str(r.status_code))
     return r
